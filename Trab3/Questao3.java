@@ -22,8 +22,8 @@ public class Questao3 {
      */
     public static void main(String[] args) {
           
-        int l = Integer.parseInt(JOptionPane.showInputDialog("Type size of line"));
-        int c = Integer.parseInt(JOptionPane.showInputDialog("Type colun's size"));
+        int l = 3;//Integer.parseInt(JOptionPane.showInputDialog("Type size of line"));
+        int c = 3;//Integer.parseInt(JOptionPane.showInputDialog("Type colun's size"));
         int[][] m = new int[0][0];
         Random r = new Random();
 
@@ -43,6 +43,11 @@ public class Questao3 {
     
             System.out.println(Arrays.toString(row));
 
+        
+        
+        ThreadSoma tSoma = new ThreadSoma(q3.matrix);
+
+        tSoma.start();
             
         
     }
