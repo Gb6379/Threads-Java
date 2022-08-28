@@ -45,9 +45,20 @@ public class Questao3 {
 
         
         
-        ThreadSoma tSoma = new ThreadSoma(q3.matrix);
+        ThreadSoma tSoma = new ThreadSoma(q3.matrix, 0);
+        Thread tSoma2 = new ThreadSoma(q3.matrix, 1);
 
-        tSoma.start();
+        
+        try {
+            tSoma.start();
+            tSoma.join();
+            
+            tSoma2.start();
+        } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        
             
         
     }
