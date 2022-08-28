@@ -12,8 +12,7 @@ public class ThreadSoma extends Thread {
     }
 
     public void run() {//need to populate matrix
-        
-        System.out.println(matrix.length);
+
         for (int i = l; i <= l; i++) {
             int sumRow = 0;
             for (int j = 0; j < matrix.length; j++) {
