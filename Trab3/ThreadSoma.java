@@ -19,7 +19,7 @@ public class ThreadSoma extends Thread {
                
                 sumRow = sumRow + matrix[i][j];  
             }
-            System.out.println("Sum of " + (i+1) +" row: " + sumRow); 
+            System.out.println("Sum of " + (i+1) +" row: " + sumRow + "  Thread id: " + Thread.currentThread().getId()); 
         }
 
     

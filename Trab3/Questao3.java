@@ -22,8 +22,8 @@ public class Questao3 {
      */
     public static void main(String[] args) {
           
-        int l = 3;//Integer.parseInt(JOptionPane.showInputDialog("Type size of line"));
-        int c = 3;//Integer.parseInt(JOptionPane.showInputDialog("Type colun's size"));
+        int l = 4;//Integer.parseInt(JOptionPane.showInputDialog("Type size of line"));
+        int c = 4;//Integer.parseInt(JOptionPane.showInputDialog("Type colun's size"));
         int[][] m = new int[0][0];
         Random r = new Random();
 
@@ -45,25 +45,16 @@ public class Questao3 {
 
         
         
-        ThreadSoma tSoma = new ThreadSoma(q3.matrix, 0);
-        ThreadSoma tSoma2 = new ThreadSoma(q3.matrix, 1);
-        ThreadSoma tSoma3 = new ThreadSoma(q3.matrix, 2);
-
-
-        
         try {
-            tSoma.start();
-            tSoma.join();
-            
-            tSoma2.start();
-            tSoma2.join();
-
-            tSoma3.start();
-        } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
+            for (int i = 0; i < q3.matrix.length; i++) {
+                System.out.println();
+                ThreadSoma tSoma = new ThreadSoma(q3.matrix, i);
+                tSoma.start();
+                tSoma.join();
+            }    
+        } catch (Exception e) {
+            //TODO: handle exception
         }
-        
             
         
     }
